@@ -1,4 +1,5 @@
-# Cool streaming platform (personal use only!) By AB_DEEPCODING (Web Developer) and AtlanticCod (Web designer)
+# Cool streaming platform (personal use only!) 
+By AB_DEEPCODING (Web Developer) and AtlanticCod (Web designer)
 
 
 This is a cool streaming platform that should not be taken seriously. This is a side-project with 
