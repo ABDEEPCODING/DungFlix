@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'blueberry';
     src: url(Fonts/blueberry.ttf);
+    color:black;
 }
 
 
@@ -19,20 +20,22 @@ body{
     text-align:center;
     font-weight:bold;
     font-family:blueberry;
+    color:white;
+    cursor:pointer;
     font-size:100px;
     margin-top:-20px;
 }
 
 #title{
-    background-color:red;
-    border-radius:10px;
+    background-color:black;
+ 
     
 }
 
 
 
 #content{
-    background-color:#0096FF;
+    background-color:transparent;
     max-width:1024px;
     margin: 0 auto;
     padding:20px;
@@ -81,6 +84,7 @@ video{
     font-size:16px;
     font-weight:600;
     font-family:blueberry;
+    color:black;
 }
 
 .navbar{
@@ -89,6 +93,8 @@ video{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    margin-top:-70px;
+    border-radius: 0 0 20px 20px;
 }
 
 .nav-left{
