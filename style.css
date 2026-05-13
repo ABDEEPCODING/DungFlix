@@ -208,3 +208,21 @@ body {
     width: auto;
     display: block;
 }
+
+#no-results{
+    display:none;
+    font-family:blueberry;
+    font-size:90px;
+    color:#1e1e1e;
+    text-align:center;
+    
+}
+
+#no-suggestion {
+    display: none;
+    font-family: blueberry;
+    font-size: 30px;
+    color: #1e1e1e;
+    margin-top: -40px; /* pulls it closer to the main text */
+    text-align:center;
+}
