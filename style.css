@@ -44,7 +44,7 @@ video{
     display:grid;
     grid-auto-flow: row;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap:20px;
+    gap:10px;
 }
 
 .thumbnailgrid img{
@@ -191,7 +191,7 @@ body {
 
 
 #movie_body{
-    background-color:#1e1e1e
+    background-color:white;
 }
 
 .titleheading_movie{
