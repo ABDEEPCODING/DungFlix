@@ -131,6 +131,7 @@ video{
     border-radius: 8px;
     font-weight: bold;
     cursor:default;
+    font-family:blueberry;
 }
 
 /* NAVIGATION BAR */
@@ -170,4 +171,40 @@ video{
 /* GLOBAL FIX FOR SIDEWAYS SCROLLING */
 body {
     overflow-x: hidden;
+}
+
+#movies{
+    background-color:#1e1e1e;
+}
+
+#header_movie{
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* prevents horizontal overflow */
+
+}
+
+
+#movie_body{
+    background-color:#1e1e1e
+}
+
+.titleheading_movie{
+    font-size: 40px;
+    font-family: blueberry;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    cursor:default;
+}
+
+.mascot_movie{
+    height: 65px;      /* matches title height */
+    width: auto;
+    display: block;
 }
