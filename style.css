@@ -16,21 +16,7 @@ body{
     
 }
 
-.titleheading{
-    text-align:center;
-    font-weight:bold;
-    font-family:blueberry;
-    color:white;
-    cursor:pointer;
-    font-size:100px;
-    margin-top:-20px;
-}
 
-#title{
-    background-color:black;
- 
-    
-}
 
 
 
@@ -87,38 +73,7 @@ video{
     color:black;
 }
 
-.navbar{
-    background-color:#111;
-    padding:15px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-top:-70px;
-    border-radius: 0 0 20px 20px;
-}
 
-.nav-left{
-    display:flex;
-    gap:20px;
-}
-
-.nav-link{
-    padding: 8px 12px;
-    font-size: 16px;
-    border-radius: 6px;
-    border: 1px solid #444;
-    background-color: #222;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    font-family:blueberry;
-
-}
-
-.nav-link:hover{
-    text-decoration:underline;
-}
 
 #search{
     padding:8px 12px;
@@ -131,3 +86,88 @@ video{
     font-family:blueberry;
 }
 
+/* LOGO GROUP */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* MASCOT IMAGE */
+.mascot {
+    height: 150px;      /* matches title height */
+    width: auto;
+    display: block;
+}
+
+/* TITLE */
+.titleheading {
+    font-size: 100px;
+    font-family: blueberry;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    cursor:default;
+}
+
+/* HEADER */
+#header {
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* prevents horizontal overflow */
+    
+}
+
+/* MOVIE OF THE WEEK BUTTON */
+#motw {
+    background: white;
+    color: gold;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor:default;
+}
+
+/* NAVIGATION BAR */
+#navigation {
+    background: #111;
+    padding: 15px 20px;
+    width: 100%;
+    box-sizing: border-box;
+
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* prevents overflow */
+    border-radius:0px 0px 10px 10px;
+
+    
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#search {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 200px;
+}
+
+/* GLOBAL FIX FOR SIDEWAYS SCROLLING */
+body {
+    overflow-x: hidden;
+}
