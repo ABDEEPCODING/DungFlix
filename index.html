@@ -18,10 +18,16 @@
         </div>
     </a>
 
-    <div id="motw">
-        Coming Soon
-    </div>
+<div class="motw-header-block">
+    <h2 class="motw-title">Movie of the Week</h2>
+
+    <a href="motw/motw.html" class="motw-thumb-link">
+        <img src="/motw/motw_movie_cover.png" class="motw-thumb" alt="movie of the week">
+    </a>
+
 </div>
+
+</div><!--header-->
 
 <!-- NAVIGATION -->
 <div id="navigation">
@@ -63,8 +69,15 @@
 
 
         </div><!--Thumbnail Grid-->   
-        <p id="no-results">Movie not found.</p>
-        <p id="no-suggestion">Perhaps try looking for something else....</p>
+
+        <div id="no-results-wrapper" class="no-results-wrapper">
+            <img src="Assets/dung_baby_error.png" class="no-results-img" alt="Not Found">
+            <div class="no-results-text">
+                <h1 id="no-results">Movie not found.</h1>
+                <p id="no-suggestion">Perhaps try looking for something else…</p>
+            </div>
+        </div>
+
 
     </div><!--content-->
     <div id="footer"> 

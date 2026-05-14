@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const searchBar = document.getElementById("search");
     const cards = document.querySelectorAll(".moviecard");
-    const noResults = document.getElementById("no-results");
-    const noSuggestion = document.getElementById("no-suggestion");
+
+    // NEW: wrapper for the image + text
+    const noResultsWrapper = document.getElementById("no-results-wrapper");
 
     searchBar.addEventListener("input", () => {
         const query = searchBar.value.toLowerCase();
@@ -19,8 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const showMessage = query && visibleCount === 0;
 
-        noResults.style.display = showMessage ? "block" : "none";
-        noSuggestion.style.display = showMessage ? "block" : "none";
+        // NEW: show/hide the entire block
+        noResultsWrapper.style.display = showMessage ? "flex" : "none";
     });
 });
 
