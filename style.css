@@ -13,11 +13,8 @@
 body{
     background-color:white;
     background-size:cover;
-    
+
 }
-
-
-
 
 
 #content{
@@ -225,4 +222,10 @@ body {
     color: #1e1e1e;
     margin-top: -40px; /* pulls it closer to the main text */
     text-align:center;
+}
+
+.video-frame {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
 }
