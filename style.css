@@ -88,6 +88,7 @@ video{
     display: flex;
     align-items: center;
     gap: 20px;
+    cursor:pointer;
 }
 
 /* MASCOT IMAGE */
@@ -104,7 +105,7 @@ video{
     font-weight: bold;
     color: white;
     margin: 0;
-    cursor:default;
+    cursor:pointer;
 }
 
 /* HEADER */
@@ -197,13 +198,14 @@ body {
     font-weight: bold;
     color: white;
     margin: 0;
-    cursor:default;
+    cursor:pointer;
 }
 
 .mascot_movie{
     height: 65px;      /* matches title height */
     width: auto;
     display: block;
+    cursor:pointer;
 }
 
 #no-results{
@@ -228,4 +230,10 @@ body {
     position: relative;
     width: fit-content;
     margin: 0 auto;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
 }

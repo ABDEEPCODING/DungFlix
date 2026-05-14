@@ -23,3 +23,41 @@ document.addEventListener("DOMContentLoaded", () => {
         noSuggestion.style.display = showMessage ? "block" : "none";
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const vid = document.getElementById("motw");
+
+    if (vid) {
+        vid.onloadedmetadata = () => {
+            vid.playbackRate = 2;
+            vid.defaultPlaybackRate = 2;
+        };
+
+        vid.addEventListener("ratechange", () => {
+            if (vid.playbackRate !== 2) {
+                vid.playbackRate = 2;
+            }
+        });
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const vid = document.getElementById("motw");
+
+    if (!vid) return;
+
+    // Force 2x on load
+    vid.onloadedmetadata = () => {
+        vid.playbackRate = 2;
+        vid.defaultPlaybackRate = 2;
+    };
+
+    // Prevent user from changing speed
+    vid.addEventListener("ratechange", () => {
+        if (vid.playbackRate !== 2) {
+            vid.playbackRate = 2;
+        }
+    });
+});
