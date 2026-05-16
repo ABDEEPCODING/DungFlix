@@ -296,10 +296,11 @@ body {
     color: #FFD700; /* gold */
     text-decoration: none;
     margin: 0;
-    margin-top: -5px;
+    margin-top: -100px;
     transform: rotate(-5deg);
     text-shadow: 0 0 5px rgba(0,0,0,0.6);
     display: inline-block;
+    margin-left:-900px;
 }
 
 .splash-text:hover {
