@@ -248,6 +248,7 @@ body {
     font-size: 24px;
     color: gold;
     margin: 0;
+    cursor:default;
 }
 
 .motw-thumb {
