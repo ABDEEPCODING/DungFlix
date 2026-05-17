@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marathon Mode</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="marathon.css">
+    <link rel="icon" href="Assets/dungbaby.ico">
+</head>
+
+<body id="movie_body">
+
+    <header id="header_movie">
+        <a href="/" class="logo-link">
+            <div class="logo">
+                <img src="Assets/dung_baby.png" class="mascot_movie">
+                <h1 class="titleheading_movie">DungFlix</h1>
+            </div>
+        </a>
+    </header>
+
+    <nav id="navigation">
+        <a href="index.html" class="nav-link">Home Page</a>
+    </nav>
+
+    <div id="content">
+
+        <div id="marathon-header">
+            <h2 class="movie-title">Marathon Mode</h2>
+            <p id="progress-text">Loading...</p>
+        </div>
+
+        <div id="marathon-layout">
+
+            <div id="left-column">
+                <h4>You're Watching:</h4>
+                <img id="now-watching-img" src="">
+                <h3 id="movie-title" style="display: none">Loading movie...</h3>
+            </div>
+
+            <div id="center-column">
+                <iframe id="movie-frame" allow="autoplay"></iframe>
+                <button id="next-button">Next Movie ▶</button>
+            </div>
+
+            <div id="right-column">
+                <h3>Up Next</h3>
+                <div id="next-card"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="marathonmode.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'blueberry';
+    src: url(Fonts/blueberry.ttf);
+    color:black;
+}
+
+
+
+#marathon-layout {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 40px;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    transform: translateX(-270px);
+   
+}
+
+#marathon-header {
+    text-align: center;
+    transform: translateX(-30px);
+    margin-bottom: 20px;
+}
+
+
+#left-column {
+    text-align: center;
+    margin-top: -10px;
+    font-family:blueberry;
+}
+
+
+#now-watching-img {
+    width: 220px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#center-column {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+#movie-frame {
+    width: 1000px;
+    height: 550px;
+    border: none;
+}
+
+#right-column {
+    text-align: left;
+    align-self: start;
+    font-family:blueberry;
+}
+
+#next-card img {
+    width: 180px;
+    border-radius: 10px;
+}
+#movie-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+#next-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background: #ff4444;
+    color: white;
+    cursor: pointer;
+    font-family:blueberry;
+}
+
+#next-button:hover {
+    background: #ff2222;
+}
