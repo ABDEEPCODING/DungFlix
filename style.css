@@ -347,3 +347,27 @@ body {
     margin-top: 10px;
     font-family:blueberry;
 }
+
+
+.moviecard {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.moviecard:hover {
+    transform: scale(1.05);
+}
+
+.moviecard.mature::after {
+    content: "M";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    color: white;
+    padding: 4px 8px;
+    font-weight: bold;
+    border-bottom-left-radius: 6px;
+    font-size: 0.9rem;
+}
