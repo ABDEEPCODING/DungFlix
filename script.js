@@ -62,3 +62,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const warning = document.querySelector(".mature-warning");
+    const player = document.getElementById("movie-player");
+    const btn = document.getElementById("continue");
+
+    if (btn && warning && player) {
+        btn.onclick = () => {
+            warning.style.display = "none";
+            player.style.display = "block";
+        };
+    }
+});
