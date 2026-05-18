@@ -1,18 +1,56 @@
 let currentIndex = 0;
+let watchTimer;
+let countdownTimer;
+let timeLeft = 5400;
+let runVoided = false;
 
 const marathonMovies = [
-    { title: "C.H.U.D.", youtubeId: "lTvfzolWRBw", thumbnail: "Movie_thumbnails/chud.png" },
-
-
-    { title: "The Reconciler", youtubeId: null, thumbnail: "Movie_thumbnails/reconciler.png" },
-    { title: "The Amazing Bulk", youtubeId: null, thumbnail: "Movie_thumbnails/amazing_bulk.png" },
-    { title: "Attack of the Killer Tomatoes", youtubeId: null, thumbnail: "Movie_thumbnails/Attack_of_the_Killer_Tomatoes.png" },
-    { title: "Piranha", youtubeId: null, thumbnail: "Movie_thumbnails/Piranha.png" },
-    { title: "Birdemic: Shock and Terror", youtubeId: null, thumbnail: "Movie_thumbnails/Birdemic.png" },
-    { title: "C.H.U.D. II", youtubeId: null, thumbnail: "Movie_thumbnails/Chud_two.png" },
-    { title: "Titanic II", youtubeId: null, thumbnail: "Movie_thumbnails/titanic_two.png" },
-    { title: "Super Mario Bros (Morton Jankel Cut)", youtubeId: null, thumbnail: "Movie_thumbnails/Super_Mario_Bros.png" }
+    { title: "C.H.U.D.", fileId: "1DVucLoYKHbT3FHqG4BwRx9A0c95zoSLL", thumbnail: "Movie_thumbnails/chud.png" },
+    { title: "The Reconciler", fileId: "1bX0oHHq470ZUpcZC4K9HZEpsc8Vkxl8q", thumbnail: "Movie_thumbnails/reconciler.png" },
+    { title: "The Amazing Bulk", fileId: "1AScuz9A8GWDqKR1jDiIP7Z4Jp6orowUD", thumbnail: "Movie_thumbnails/amazing_bulk.png" },
+    { title: "Attack of the Killer Tomatoes", fileId: "1jWofaMO6ifM-IPEqJ5HtWFrgmTf1veYS", thumbnail: "Movie_thumbnails/Attack_of_the_Killer_Tomatoes.png" },
+    { title: "Piranha", fileId: "19huyMBe-u7dgQYrdQdzKmcWB8qH6pTPp", thumbnail: "Movie_thumbnails/Piranha.png" },
+    { title: "Birdemic: Shock and Terror", fileId: "1PhnWw2Ac9lz2stTS6VW41DIu3e-_mn2G", thumbnail: "Movie_thumbnails/Birdemic.png" },
+    { title: "C.H.U.D. II", fileId: "1t31WVvTZXQ2lUUo4_5Ciw5wDSDAfNv0j", thumbnail: "Movie_thumbnails/Chud_two.png" },
+    { title: "Titanic II", fileId: "1eYgqSjBgKfKYG7-UoMxls8Vr-MAyICko", thumbnail: "Movie_thumbnails/titanic_two.png" },
+    { title: "Super Mario Bros (Morton Jankel Cut)", fileId: "1dNQqMjBO-eoONfGnv20vUCEisbaHPHWh", thumbnail: "Movie_thumbnails/Super_Mario_Bros.png" }
 ];
+
+function voidRun() {
+    runVoided = true;
+    alert("Run void: you left the page or switched tabs.");
+}
+
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden) voidRun();
+});
+
+window.addEventListener("beforeunload", () => {
+    voidRun();
+});
+
+function formatTime(t) {
+    let h = Math.floor(t / 3600);
+    let m = Math.floor((t % 3600) / 60);
+    let s = t % 60;
+    return `${h}:${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
+}
+
+function startCountdown() {
+    clearInterval(countdownTimer);
+    timeLeft = 5400;
+    document.getElementById("countdown").textContent = formatTime(timeLeft);
+
+    countdownTimer = setInterval(() => {
+        timeLeft--;
+        document.getElementById("countdown").textContent = formatTime(timeLeft);
+
+        if (timeLeft <= 0) {
+            clearInterval(countdownTimer);
+            document.getElementById("finish-button").disabled = false;
+        }
+    }, 1000);
+}
 
 function loadMarathonMovie() {
     const movie = marathonMovies[currentIndex];
@@ -20,18 +58,19 @@ function loadMarathonMovie() {
     document.getElementById("now-watching-img").src = movie.thumbnail;
     document.getElementById("movie-title").textContent = movie.title;
 
-    if (movie.youtubeId) {
+    if (movie.fileId) {
         document.getElementById("movie-frame").src =
-            `https://www.youtube.com/embed/${movie.youtubeId}`;
+            `https://drive.google.com/file/d/${movie.fileId}/preview`;
     } else {
-        // Placeholder video (YouTube blank screen)
-        document.getElementById("movie-frame").src =
-            "https://www.youtube.com/embed/dQw4w9WgXcQ"; 
+        document.getElementById("movie-frame").src = "";
     }
 
     document.getElementById("progress-text").textContent =
         `You are watching movie ${currentIndex + 1} of ${marathonMovies.length}`;
 
+    document.getElementById("finish-button").disabled = true;
+
+    startCountdown();
     updateNextCard();
 }
 
@@ -55,9 +94,15 @@ function updateNextCard() {
 }
 
 function nextMovie() {
+    if (runVoided) {
+        alert("Run void — you cannot continue.");
+        return;
+    }
+
     currentIndex++;
 
     if (currentIndex >= marathonMovies.length) {
+        unlockTrophy("all_movies");
         alert("Marathon complete!");
         return;
     }
@@ -65,6 +110,6 @@ function nextMovie() {
     loadMarathonMovie();
 }
 
-document.getElementById("next-button").onclick = nextMovie;
+document.getElementById("finish-button").onclick = nextMovie;
 
 loadMarathonMovie();

@@ -106,6 +106,7 @@ video{
 #header {
     background: black;
     display: flex;
+    position:relative;
     justify-content: space-between;
     align-items: center;
     padding: 40px 20px;
@@ -150,6 +151,7 @@ video{
 .nav-link {
     color: white;
     text-decoration: none;
+    font-family:blueberry;
     font-size: 18px;
 }
 
@@ -368,3 +370,34 @@ body {
 }
 
 
+.nav-middle {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    font-family: blueberry;
+    font-size: 18px;
+    color:gold !important;
+}
+
+#trophy-popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: gold;
+    color: black;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-family: blueberry;
+    font-size: 18px;
+    z-index: 9999;
+    text-align: center;
+}
+
+.trophy-icon {
+    width: 60px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+}
