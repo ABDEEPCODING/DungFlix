@@ -1,5 +1,4 @@
 let currentIndex = 0;
-let watchTimer;
 let countdownTimer;
 let timeLeft = 5400;
 let runVoided = false;
@@ -12,21 +11,19 @@ const marathonMovies = [
     { title: "Piranha", fileId: "19huyMBe-u7dgQYrdQdzKmcWB8qH6pTPp", thumbnail: "Movie_thumbnails/Piranha.png" },
     { title: "Birdemic: Shock and Terror", fileId: "1PhnWw2Ac9lz2stTS6VW41DIu3e-_mn2G", thumbnail: "Movie_thumbnails/Birdemic.png" },
     { title: "C.H.U.D. II", fileId: "1t31WVvTZXQ2lUUo4_5Ciw5wDSDAfNv0j", thumbnail: "Movie_thumbnails/Chud_two.png" },
-    { title: "Titanic II", fileId: "1eYgqSjBgKfKYG7-UoMxls8Vr-MAyICko", thumbnail: "Movie_thumbnails/titanic_two.png" },
+    { title: "Titanic II", fileId: "1eYgqSjBgKfKYG7-UoMxls8Vr-MAyICko", thumbnail: "Movie_thumbnails/Titanic_two.png" },
     { title: "Super Mario Bros (Morton Jankel Cut)", fileId: "1dNQqMjBO-eoONfGnv20vUCEisbaHPHWh", thumbnail: "Movie_thumbnails/Super_Mario_Bros.png" }
 ];
 
 function voidRun() {
     runVoided = true;
-    alert("Run void: you left the page or switched tabs.");
+    alert("Run void: you switched tabs. Stay on this page to finish the marathon.");
 }
 
+// Void the run only if the user leaves the tab/window during the marathon.
+// (Don't fire on internal navigation — finishing a movie stays on the page.)
 document.addEventListener("visibilitychange", () => {
     if (document.hidden) voidRun();
-});
-
-window.addEventListener("beforeunload", () => {
-    voidRun();
 });
 
 function formatTime(t) {

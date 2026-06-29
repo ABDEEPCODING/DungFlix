@@ -1,0 +1,6 @@
+\.env
+
+# Local-only project files (not for public repo)
+.agents/
+ponytail.txt
+knowledge.md

@@ -31,10 +31,23 @@ function unlockTrophy(id) {
 }
 
 function showTrophyPopup(trophy) {
-    const popup = document.getElementById("trophy-popup").innerHTML = `
-    <img src="Assets/marathon_trophy.png" class="trophy-icon">
-    <span>Trophy Unlocked: All Movies Watched!</span>
-`;
+    let popup = document.getElementById("trophy-popup");
+    if (!popup) {
+        popup = document.createElement("div");
+        popup.id = "trophy-popup";
+        document.body.appendChild(popup);
+    }
+    popup.innerHTML = `
+        <img src="Assets/marathon_trophy.png" class="trophy-icon">
+        <span>Trophy Unlocked: ${trophy.name}!</span>
+    `;
+    popup.style.display = "block";
+
+    // Auto-hide after 4 seconds
+    clearTimeout(showTrophyPopup._timer);
+    showTrophyPopup._timer = setTimeout(() => {
+        popup.style.display = "none";
+    }, 4000);
 }
 
 loadTrophies();
